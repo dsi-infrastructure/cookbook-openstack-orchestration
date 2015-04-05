@@ -36,6 +36,7 @@ end
 
 service 'heat-api-cloudwatch' do
   service_name platform_options['heat_api_cloudwatch_service']
+  provider Chef::Provider::Service::Upstart
   supports status: true, restart: true
 
   action :enable

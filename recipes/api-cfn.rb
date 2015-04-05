@@ -32,6 +32,7 @@ end
 
 service 'heat-api-cfn' do
   service_name platform_options['heat_api_cfn_service']
+  provider Chef::Provider::Service::Upstart
   supports status: true, restart: true
 
   action :enable

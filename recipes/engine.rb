@@ -32,6 +32,7 @@ end
 
 service 'heat_engine' do
   service_name platform_options['heat_engine_service']
+  provider Chef::Provider::Service::Upstart
   supports status: true, restart: true
   action :enable
   subscribes :restart, 'template[/etc/heat/heat.conf]'
