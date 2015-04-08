@@ -29,11 +29,11 @@ identity_admin_endpoint = admin_endpoint 'identity-admin'
 token = get_secret 'openstack_identity_bootstrap_token'
 auth_url = ::URI.decode identity_admin_endpoint.to_s
 
-admin_heat_endpoint = admin_endpoint 'orchestration-api'
-internal_heat_endpoint = internal_endpoint 'orchestration-api'
+admin_heat_endpoint = admin_endpoint 'orchestration-admin'
+internal_heat_endpoint = internal_endpoint 'orchestration-internal'
 public_heat_endpoint = public_endpoint 'orchestration-api'
-admin_heat_cfn_endpoint = admin_endpoint 'orchestration-api-cfn'
-internal_heat_cfn_endpoint = internal_endpoint 'orchestration-api-cfn'
+admin_heat_cfn_endpoint = admin_endpoint 'orchestration-admin-cfn'
+internal_heat_cfn_endpoint = internal_endpoint 'orchestration-internal-cfn'
 public_heat_cfn_endpoint = public_endpoint 'orchestration-api-cfn'
 
 service_pass = get_password 'service', 'openstack-orchestration'
